@@ -232,40 +232,48 @@
 
 % Rizky Sandiary 8-11
 \begin{exercise}
+\\
 Bagaimana OSI dan ISO terkait satu sama lain?
 \end{exercise}
 
 \begin{solution}
+\\
 ISO adalah organisasi (Organisasi Standar Internasional), dan OSI (Interkoneksi Sistem Terbuka) adalah modelnya.
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
+\\
 Misalkan komputer mengirimkan paket pada lapisan jaringan ke komputer lain di suatu tempat di Internet. Alamat tujuan logis dari paket rusak. Apa yang terjadi pada paket? Bagaimana komputer sumber dapat mengetahui situasinya?
 \end{exercise}
 
 \begin{solution}
+\\
 Sebelum menggunakan alamat tujuan di perantara atau node tujuan, paket melewati pemeriksaan kesalahan yang dapat membantu node menemukan korupsi (dengan probabilitas tinggi) dan membuang paket. Biasanya protokol lapisan atas akan menginformasikan sumber untuk mengirim ulang paket.
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
+\\
 Jika lapisan data link dapat mendeteksi kesalahan antar hop, mengapa menurut Anda kita memerlukan mekanisme pemeriksaan lain di lapisan transport?
 \end{exercise}
 
 \begin{solution}
+\\
 Kesalahan antar node dapat dideteksi oleh kontrol lapisan data link, tetapi kesalahan pada node (antara port input dan port output) dari node tidak dapat dideteksi oleh lapisan data link
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
+\\
 Misalkan sebuah komputer mengirimkan sebuah frame ke komputer lain pada topologi bus LAN. Alamat tujuan fisik frame rusak selama transmisi. Apa yang terjadi pada bingkai? Bagaimana pengirim dapat diberitahu tentang situasinya?
 \end{exercise}
 
 \begin{solution}
+\\
 Jika alamat tujuan yang rusak tidak cocok dengan alamat stasiun mana pun di jaringan, paket akan hilang. Jika alamat tujuan yang rusak cocok dengan salah satu stasiun, frame dikirimkan ke stasiun yang salah. Namun, dalam kasus ini, mekanisme pendeteksian kesalahan, yang tersedia di sebagian besar protokol tautan data, akan menemukan kesalahan dan membuang bingkai. Dalam kedua kasus, sumber entah bagaimana akan diinformasikan menggunakan salah satu mekanisme kontrol tautan data.
 \end{solution}
 
@@ -755,24 +763,22 @@ c. PM (set =1)
 \begin{solution}
 \\
 Mengingat frekuensi sinyal suara -
+\=5kHz
+\a) Bandwidth modulasi amplitudo Bam=2B
+\=2 × 5kHz
+\=10kHz
 
-=5kHz
+\b) Bandwidth yang dibutuhkan untuk modulasi fase
+\Bpm=2(1+β)B 
+\Sekarang, menggantikan nilai-nilai,
+\=2(1+3) × 5kHz
+\=40kHz
 
-a) Bandwidth modulasi amplitudo Bam=2B
-=2 × 5kHz
-=10kHz
-
-b) Bandwidth yang dibutuhkan untuk modulasi fase
-Bpm=2(1+β)B 
-Sekarang, menggantikan nilai-nilai,
-=2(1+3) × 5kHz
-=40kHz
-
-c) Bandwidth yang dibutuhkan untuk modulasi fase,
-Bpm=2(1+β)B 
-Sekarang, menggantikan nilai-nilai,
-=2(1+1) × 5kHz
-=20kHz
+\c) Bandwidth yang dibutuhkan untuk modulasi fase,
+\Bpm=2(1+β)B 
+\Sekarang, menggantikan nilai-nilai,
+\=2(1+1) × 5kHz
+\=20kHz
 \end{solution}
 
 \vspace{12pt}
