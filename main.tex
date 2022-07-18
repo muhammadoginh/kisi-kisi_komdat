@@ -368,35 +368,68 @@ setiap sinyal adalah sinyal sederhana dalam hal ini. Bandwidth dari sinyal seder
 % Muhammad Arie Setya Putra Pala 7-9 (diperbaiki)
 \begin{exercise}
 \\
-Apa hubungan teorema Nyquist dengan komunikasi?
+Sepuluh sumber, enam dengan bit rate 200 kbps dan empat dengan bit rate 400 kbps akan digabungkan menggunakan TDM bertingkat tanpa bit sinkronisasi. Jawablah pertanyaan-pertanyaan berikut tentang tahap akhir multiplexing?
+\begin{itemize}
+  \item[a.] Berapa ukuran frame dalam bit?
+  \item[b.] Berapa frame ratenya?
+  \item[c.] Berapa durasi sebuah frame?
+  \item[d.] Berapa kecepatan datanya?
+\end{itemize}
 \end{exercise}
 
 \begin{solution}
 \\
-Teorema Nyquist-Shannon juga dikenal sebagai teorema pengambilan sampel adalah ketentuan fisik mendasar untuk komunikasi di mana sinyal kontinu dalam waktu terkait dengan sinyal diskrit dalam waktu. Ini pada dasarnya menetapkan jumlah pengambilan sampel minimum yang memungkinkan urutan diskrit untuk menangkap semua sinyal kontinu.
+\begin{itemize}
+  \item[a.] Can allocate six 200 Kbps sources into three 400 Kbps => 7 total 400 Kbps sources. Each output frame carries one bit from each of the 400 Kbps sources => frame size = 7 bits
+  \item[b.] 400 Kfps
+  \item[c.] 1/40000 = 2.5 microseconds
+  \item[d.] 7 x 40000 = 2.8 Mbps
+\end{itemize}
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
 \\
-Apa hubungan kapasitas Shannon dengan komunikasi?
+Empat saluran, dua dengan laju bit 200 kbps dan dua dengan laju bit 150 kbps, akan dimultipleks menggunakan TDM slot ganda tanpa bit sinkronisasi. Jawab pertanyaan berikut?
+\begin{itemize}
+  \item[a.] Berapa ukuran frame dalam bit?
+  \item[b.] Berapa frame ratenya?
+  \item[c.] Berapa durasi frame?
+  \item[d.] Berapa kecepatan datanya?
+\end{itemize}
 \end{exercise}
 
 \begin{solution}
 \\
-Batas Shannon atau kapasitas Shannon dari saluran komunikasi mengacu pada tingkat maksimum data bebas kesalahan yang secara teoritis dapat ditransfer melalui saluran jika tautan mengalami kesalahan transmisi data acak, untuk tingkat kebisingan tertentu.
+\begin{itemize}
+  \item[a.] 8 50 Kbps channels from N = 200 Kbps and 6 50 Kbps channels from N = 150 Kbps => frame size = 14 bits
+  \item[b.] 14 input lines of 50 Kbps, one bit from each per frame => 50 Kfps
+  \item[c.] 1 / 50 x 10 \^ 3 = 20 microseconds
+  \item[d.] 50000 x 14 = 700 Kbps
+\end{itemize}
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
 \\
-Mengapa sinyal optik yang digunakan pada kabel serat optik memiliki panjang gelombang yang sangat pendek?
+Dua saluran, satu dengan laju bit 190 kbps dan lainnya dengan laju bit 180 kbps, akan dimultipleks menggunakan TDM isian pulsa tanpa bit sinkronisasi. Jawab pertanyaan berikut?
+\begin{itemize}
+  \item[a.] Berapa ukuran frame dalam bit?
+  \item[b.] Berapa frame ratenya?
+  \item[c.] Berapa durasi frame?
+  \item[d.] Berapa kecepatan datanya?
+\end{itemize}
 \end{exercise}
 
 \begin{solution}
-Optical signals have very high frequencies. A high frequency means a short wave length because the wave length is inversely proportional to the frequency.
+  \begin{itemize}
+    \item[a.] 2 bits (from 2 sources) add 10 Kbps to 180 Kbps to get 2 190 Kbps sources
+    \item[b.] 190 Kfps
+    \item[c.] 1 / 190000 = 5.236 microseconds
+    \item[d.] 190000x2 = 380 Kbps
+  \end{itemize}
 \end{solution}
 
 \vspace{12pt}
@@ -1013,49 +1046,68 @@ Kami menggunakan rumus $r = log_2L untuk menghitung nilai r untuk setiap kasus.$
 % Muhammad Arie Setya Putra Pala 1-4 (perlu diperbaiki)
 \begin{exercise}
 \\
-Jelaskan tujuan dari multiplexing
+Asumsikan bahwa saluran suara menempati bandwidth 4 kHz. Kita perlu multipleks 10 saluran suara dengan band penjaga 500 Hz menggunakan FDM. Hitung yang dibutuhkan
+lebar pita!
 \end{exercise}
 
 \begin{solution}
 \\
-Tujuan multiplexing adalah untuk memungkinkan sinyal ditransmisikan lebih efisien melalui saluran komunikasi tertentu, sehingga mengurangi biaya transmisi.
+Untuk multipleks 10 saluran suara, kita membutuhkan sembilan band penjaga. Bandwidth yang dibutuhkan kemudian B = (4 KHz) × 10 + (500 Hz) × 9 = 44,5 KHz
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
 \\
-Sebutkan tiga teknik multiplexing utama yang disebutkan dalam bab ini.
+Kita perlu mengirimkan 100 saluran suara digital menggunakan saluran pass-band 20 KHz. Berapa rasio bit/Hz jika kita tidak menggunakan guard band?
 \end{exercise}
 
 \begin{solution}
 \\
-frequency-division multiplexing (FDM), wave-division multiplexing (WDM), and time-division multiplexing (TDM).
+Bandwidth yang dialokasikan untuk setiap saluran suara adalah 20 KHz / 100 = 200 Hz. Seperti yang kita lihat di bab sebelumnya, setiap saluran suara digital memiliki kecepatan data 64 Kbps (8000 sampel × 8 bit/sampel). Artinya teknik modulasi kita menggunakan 64.000/200 = 320 bit/Hz.
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
 \\
-Bedakan antara tautan dan saluran dalam multiplexing.
+Dalam hierarki analog Gambar 6.9, temukan overhead (bandwidth ekstra untuk guard band atau kontrol) di setiap level hierarki (grup, supergrup, grup master, dan grup jumbo)!
 \end{exercise}
 
 \begin{solution}
 \\
-Dalam multiplexing, kata link mengacu pada jalur fisik. Kata saluran mengacu pada bagian dari tautan yang membawa transmisi antara sepasang garis tertentu. Satu tautan dapat memiliki banyak (n) saluran.
+\begin{itemize}
+  \item[a.] Tingkat grup: overhead=48KHz-(12×4KHz)=0Hz.
+  \item[b.] Tingkat supergrup: overhead = 240 KHz (5 × 48 KHz) = 0 Hz.
+  \item[c.] Grup master: overhead = 2520 KHz (10 × 240 KHz) = 120 KHz.
+  \item[d.] Grup Jumbo: overhead = 16,984 MHz (6 × 2,52 MHz) = 1,864 MHz.
+\end{itemize}
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
 \\
-Manakah dari tiga teknik multiplexing yang digunakan untuk menggabungkan sinyal analog?
-Manakah dari tiga teknik multiplexing yang digunakan untuk menggabungkan sinyal digital?
+Kita perlu menggunakan TDM sinkron dan menggabungkan 20 sumber digital, masing-masing 100 Kbps. Setiap slot keluaran membawa 1 bit dari setiap sumber digital, tetapi satu bit tambahan ditambahkan ke setiap frame untuk sinkronisasi. Jawab pertanyaan berikut!
+\begin{itemize}
+  \item[a.] Berapa ukuran bingkai keluaran dalam bit?
+  \item[b.] Berapa kecepatan bingkai keluaran?
+  \item[c.] Berapa durasi frame output?
+  \item[d.] Berapa kecepatan data keluaran?
+  \item[e.] Berapa efisiensi sistem (rasio bit yang berguna dengan total bit).
+\end{itemize}
 \end{exercise}
 
 \begin{solution}
 \\
-FDM dan WDM digunakan untuk menggabungkan sinyal analog; bandwidth dibagi. TDM digunakan untuk menggabungkan sinyal digital; waktunya dibagi.
+\begin{itemize}
+  \item[a.] Setiap frame output membawa 1 bit dari setiap sumber ditambah satu bit tambahan untuk sinkronisasi
+  nisasi. Ukuran bingkai = 20 x 1 + 1 = 21 bit.
+  \item[b.] Setiap frame membawa 1 bit dari setiap sumber. Kecepatan bingkai = 100.000 bingkai/dtk.
+  \item[c.] Durasi bingkai = 1 /(kecepatan bingkai) = 1/100.000 = 10 s.
+  \item[d.] Kecepatan data = (100.000 frame/dtk) x (21 bit/bingkai) = 2,1 Mbps
+  \item[e.] Dalam setiap frame 20 bit dari 21 berguna. Efisiensi = 20/21= 95\%
+\end{itemize}
 \end{solution}
 
 \vspace{12pt}
