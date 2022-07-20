@@ -264,11 +264,13 @@
 
 % Rizky Sandiary 8-11 (diperbaiki)
 \begin{exercise}
-Bagaimana OSI dan ISO terkait satu sama lain?
+Misalkan sebuah komputer mengirimkan sebuah frame ke komputer lain pada topologi bus LAN.
+Alamat tujuan fisik frame rusak selama transmisi.
+Apa yang terjadi pada frame? Bagaimana pengirim dapat diberitahu tentang situasinya?
 \end{exercise}
 
 \begin{solution}
-ISO adalah organisasi (Organisasi Standar Internasional), dan OSI (Interkoneksi Sistem Terbuka) adalah modelnya.
+Jika alamat tujuan yang rusak tidak cocok dengan alamat stasiun mana pun di jaringan, paket akan hilang. Jika alamat tujuan yang rusak cocok dengan salah satu stasiun, frame dikirimkan ke stasiun yang salah. Namun, dalam kasus ini, mekanisme pendeteksian kesalahan, yang tersedia di sebagian besar protokol tautan data, akan menemukan kesalahan dan membuang bingkai. Dalam kedua kasus, sumber entah bagaimana akan diinformasikan menggunakan salah satu mekanisme kontrol tautan data yang dibahas dalam Bab 11.
 \end{solution}
 
 \vspace{12pt}
@@ -284,21 +286,21 @@ Sebelum menggunakan alamat tujuan di perantara atau node tujuan, paket melewati 
 \vspace{12pt}
 
 \begin{exercise}
-Jika lapisan data link dapat mendeteksi kesalahan antar hop, mengapa menurut Anda kita memerlukan mekanisme pemeriksaan lain di lapisan transport?
+Misalkan komputer mengirimkan paket pada lapisan transport ke komputer lain di suatu tempat di Internet. Tidak ada proses dengan alamat port tujuan yang berjalan di komputer tujuan. Apa yang akan terjadi?
 \end{exercise}
 
 \begin{solution}
-Kesalahan antar node dapat dideteksi oleh kontrol lapisan data link, tetapi kesalahan pada node (antara port input dan port output) dari node tidak dapat dideteksi oleh lapisan data link
+Sebagian besar protokol mengeluarkan pesan kesalahan khusus yang dikirim kembali ke sumber dalam kasus ini.
 \end{solution}
 
 \vspace{12pt}
 
 \begin{exercise}
-Misalkan sebuah komputer mengirimkan sebuah frame ke komputer lain pada topologi bus LAN. Alamat tujuan fisik frame rusak selama transmisi. Apa yang terjadi pada bingkai? Bagaimana pengirim dapat diberitahu tentang situasinya?
+Jika lapisan data link dapat mendeteksi kesalahan antar hop, mengapa menurut Anda kita memerlukan mekanisme pemeriksaan lain di lapisan transport?
 \end{exercise}
 
 \begin{solution}
-Jika alamat tujuan yang rusak tidak cocok dengan alamat stasiun mana pun di jaringan, paket akan hilang. Jika alamat tujuan yang rusak cocok dengan salah satu stasiun, frame dikirimkan ke stasiun yang salah. Namun, dalam kasus ini, mekanisme pendeteksian kesalahan, yang tersedia di sebagian besar protokol tautan data, akan menemukan kesalahan dan membuang bingkai. Dalam kedua kasus, sumber entah bagaimana akan diinformasikan menggunakan salah satu mekanisme kontrol tautan data.
+Kesalahan antara node dapat dideteksi oleh kontrol lapisan data link, tetapi kesalahan pada node (antara port input dan port output) dari node tidak dapat dideteksi oleh lapisan data link.
 \end{solution}
 
 \chapter{Data and Signals}
